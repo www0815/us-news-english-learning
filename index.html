@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102a43">
+  <title>Daily News English｜美国新闻英语学习</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark">DN</span><div><b>Daily News English</b><small>美国新闻英语学习</small></div></div>
+    <nav><button class="nav-btn active" data-view="news">今日新闻</button><button class="nav-btn" data-view="vocab">生词本 <span id="vocabCount">0</span></button></nav>
+  </header>
+  <main>
+    <section id="newsView">
+      <div class="hero">
+        <div><span class="eyebrow">READ · LISTEN · LEARN</span><h1>用每天的美国新闻<br>积累真实英语</h1><p>点按正文中的英文单词即可查词、收藏并写下你的批注。</p></div>
+        <div class="today-card"><span>今日更新</span><strong id="updatedDate">—</strong><small id="sourceStatus">正在读取新闻…</small></div>
+      </div>
+      <div class="toolbar">
+        <div class="filters" id="sourceFilters"><button class="chip active" data-source="all">全部</button></div>
+        <div class="toolbar-right"><label class="search"><span>⌕</span><input id="searchInput" placeholder="搜索标题、媒体或关键词"></label><input id="datePicker" type="date" aria-label="选择历史日期"></div>
+      </div>
+      <div class="content-grid">
+        <section><div class="section-head"><div><span class="eyebrow dark">TODAY'S BRIEFING</span><h2>新闻列表</h2></div><span id="resultCount"></span></div><div id="newsList" class="news-list"></div></section>
+        <aside class="study-panel"><div class="panel-sticky"><span class="eyebrow dark">QUICK LOOKUP</span><h2>单词查询</h2><form id="lookupForm"><input id="lookupInput" autocomplete="off" placeholder="输入英文单词"><button>查询</button></form><div id="dictionaryResult" class="dictionary-empty">阅读时点按单词，释义会显示在这里。</div><div class="study-stats"><div><strong id="lookupsToday">0</strong><span>今日查询</span></div><div><strong id="notesCount">0</strong><span>新闻批注</span></div></div></div></aside>
+      </div>
+    </section>
+    <section id="vocabView" hidden>
+      <div class="vocab-hero"><div><span class="eyebrow">MY WORD BANK</span><h1>我的生词本</h1><p>在这里复习查过并收藏的单词，记录自己的理解和例句。</p></div><button id="exportVocab" class="light-btn">导出生词</button></div>
+      <div class="vocab-tools"><input id="vocabSearch" placeholder="搜索生词或释义"><select id="vocabSort"><option value="new">最近添加</option><option value="az">A–Z</option><option value="freq">查询次数</option></select></div>
+      <div id="vocabList" class="vocab-list"></div>
+    </section>
+  </main>
+  <dialog id="articleDialog"><button class="dialog-close" aria-label="关闭">×</button><div id="articleContent"></div></dialog>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
